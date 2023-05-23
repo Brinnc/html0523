@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종합예제</title>
+    <style>
+        /*
+        가운데 셀렉트박스 디폴트는 비어있음
+        왼쪽 텍스트박스에 데이터를 입력하면 텍스트박스에 추가되도록(누적)
+        다 채우고 ok버튼을 누르면 맨 오른쪽 div에 선택한 데이터들이 등장하면서 1초마다 슬라이드되도록
+        슬라이드 체크박스를 해제하면 멈추고, 체크하면 움직이도록 
+
+        let op= document.createElement("option");
+        op.text="사과";
+        op.value="사과";
+        let sel=document.getElementById("sel");
+        sel.add(op);
+        */
+        #sel {
+            width: 150px;
+            height: 300px;
+        }
+    </style>
+    <script>
+
+        //초기화함수, 텍스트 박스에 입력하는 값을 셀렉트 박스에 넣을거임
+        function init() {
+            
+            let op = document.createElement("option");
+            let txt=document.getElementById("txt");
+            op.text = txt.value;
+            op.value = txt.value;;
+            let sel = document.getElementById("sel");
+            sel.add(op);
+        }
+
+        //문서가 로드되면
+        addEventListener("load", function () {
+            init();
+
+            addEventListener();
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="txt">
+    <button id="bt1">OK</button>
+    <select id="sel"></select>
+</body>
+
+</html>

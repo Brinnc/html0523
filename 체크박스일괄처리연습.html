@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체크박스연습임</title>
+    <script>
+        //king 체크박스의 상태에 따라 ch체크박스들(배열)의 상태를 조정함
+
+        function checked() {
+            let ch = document.getElementsByName("ch");
+
+            for (let i = 0; i < ch.length; i++) {
+                ch[i].checked = document.getElementById("king").checked;
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <table border="1px" width="700px" align="center">
+            <tr>
+                <td width="30px">
+                    <input type="checkbox" id="king" onClick="checkAll()">
+                </td>
+                <td width="30px">NO.</td>
+                <td width="540px">메일제목</td>
+                <td width="100px">발신자</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ch"></td>
+                <td>10</td>
+                <td>안녕하세요</td>
+                <td>송파여성인력개발원</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ch"></td>
+                <td>9</td>
+                <td>안녕하세요</td>
+                <td>송파여성인력개발원</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ch"></td>
+                <td>8</td>
+                <td>안녕하세요</td>
+                <td>송파여성인력개발원</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ch"></td>
+                <td>7</td>
+                <td>안녕하세요</td>
+                <td>송파여성인력개발원</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ch"></td>
+                <td>6</td>
+                <td>안녕하세요</td>
+                <td>송파여성인력개발원</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ch"></td>
+                <td>5</td>
+                <td>안녕하세요</td>
+                <td>송파여성인력개발원</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ch"></td>
+                <td>4</td>
+                <td>안녕하세요</td>
+                <td>송파여성인력개발원</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ch"></td>
+                <td>3</td>
+                <td>안녕하세요</td>
+                <td>송파여성인력개발원</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ch"></td>
+                <td>2</td>
+                <td>안녕하세요</td>
+                <td>송파여성인력개발원</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="ch"></td>
+                <td>1</td>
+                <td>안녕하세요</td>
+                <td>송파여성인력개발원</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

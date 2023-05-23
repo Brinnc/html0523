@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열을이용한화면전환</title>
+    <style>
+        #wrapper {
+            width: 600px;
+            height: 400px;
+            background: gray;
+            margin: auto;
+        }
+
+        #wrapper ul {
+            width: 100%;
+            height: 50px;
+            background: black;
+            padding: 0%;
+        }
+
+        ul li {
+            width: 33%;
+            border: 1px solid white;
+            background: red;
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            list-style: none;
+            /*목록의 도트가 사라짐*/
+            float: left;
+
+        }
+
+        #content {
+            width: 100%;
+            height: 350px;
+            background: grey;
+        }
+
+        #content div[name='page'] {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        //let c;
+        let page; //모든 함수에서 접근할 수 있도록 전역변수화
+
+        //원하는 div를 보이고 안보이게 하는 처리
+        function showHide(n) {
+            for (i = 0; i < page.length; i++) {
+                if (i==n) {
+                    page[i].style.display = "block"; //사용자가선택한 메뉴와 짝을 이루는 div 라면 >> 보이기
+                } else {
+                    page[i].style.display = "none"; //사용자가선택한 메뉴 이외의 div 라면 >> 숨기기
+                }
+
+
+
+            }
+        }
+
+        function init() {
+            //name값이 psge들인 div들을 대상으로 노랑빨강파랑색을 각각 부여함(반복문)
+            page = document.getElementsByName("page"); //배열처리됨
+            let color = ["yellow", "red", "blue"];
+
+            for (i = 0; i < page.length; i++) {
+                page[i].style.background = color[i];
+
+                /*
+                if (i == 0) {
+                    c = "yellow"
+                } else if (i == 1) {
+                    c = "red"
+                } else if (i == 2) {
+                    c = "blue"
+                }
+                */
+            }
+        }
+
+        addEventListener("load", function () {
+            init();
+            showHide(0);
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <ul>
+            <li style="background: yellow;" onclick="showHide(0)">메뉴1</li>
+            <li style="background: red;" onclick="showHide(1)">메뉴2</li>
+            <li style="background: blue;" onclick="showHide(2)">메뉴3</li>
+        </ul>
+        <div id="content">
+            <div name="page">메뉴1의 내용</div>
+            <div name="page">메뉴2의 내용</div>
+            <div name="page">메뉴3의 내용</div>
+        </div>
+    </div>
+</body>
+
+</html>

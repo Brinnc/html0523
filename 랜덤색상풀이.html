@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=0, initial-scale=1.0">
+    <title>랜덤한배경색풀이</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background: grey;
+        }
+    </style>
+    <script>
+        let box;
+        let color = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+        let n = 0; //배열 안에 들어있는 요소 중 어떤 요소를 접근할지를 결정하는 index변수 
+        let flag=false; //로직을 수행할지 여부를 결정짓는 논리값
+
+        //박스의 색상을 변경하는 함수
+        function setBg() {
+
+            if (flag) {
+                box.style.background = color[n];
+                //n++;
+                //n의 값을 랜덤으로 얻기
+                n=parseInt(Math.random()*color.length);
+            }
+        }
+
+        function init() {
+            box = document.getElementById("box");
+        }
+
+        addEventListener("load", function () {
+            init();
+            setInterval("setBg()", 1000);
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="checkbox" id="ch" onClick="flag=this.checked">
+    <div id="box">
+
+    </div>
+</body>
+
+</html>
