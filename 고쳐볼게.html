@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper {
+            width: 500px;
+            height: 500px;
+            background: grey;
+            margin: auto;
+            text-align: center;
+        }
+
+        #wrapper input {
+            width: 50px;
+            height: 50px;
+        }
+
+
+        #content {
+            width: 100%;
+            height: 100%;
+            background: black;
+        }
+    </style>
+    <script>
+        let content; //div의 전역변수화
+        let color = ["red", "orange", "yellow", "green", "blue", "navy", "purple"]; //출력될 색상값의 배열화
+        
+        let index=0;
+
+        //색상 바꾸는 함수
+        function colorChange() {
+            content.style.background = color[index];
+            index++;
+            index=parseInt(Math.random()*color.length);
+        }
+
+        //초기화함수
+        function init() {
+            content = document.getElementById("content"); 
+
+        }
+
+
+        addEventListener("load", function () {
+            init();
+    
+            setInterval("colorChange()", 100);
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <input type="checkbox" id="ck" onClick="colorChange()">
+
+        <div name="content"></div>
+       
+    </div>
+</body>
+
+</html>
